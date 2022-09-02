@@ -4,8 +4,7 @@ var outputBox = document.querySelector("#txt-box2");
 
 function createURL(text)
 {
-    var url = "https://api.funtranslations.com/translate/morse.json" + "?" + "text=" + text;
-    console.log(url);
+    var url = "https://api.funtranslations.com/translate/morse.json" + "?" + "text=" + text;    
     return url;
 }
 
@@ -16,10 +15,7 @@ function clickHandler()
     fetch(createURL(outputValue))
     .then(respone => respone.json())
     .then(json => {
-        console.log("hi");
-        console.log(json.contents)
-        outputBox.innerText = json.contents.translated;
-        
+        outputBox.innerText = json.contents.translated;   
     })
 }
 document.addEventListener('click',clickHandler);
